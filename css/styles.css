@@ -38,45 +38,17 @@ header {
 .header-logo {
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding: 1rem;
 }
 
 .logo {
-  width: 50%;
-  display: block;
-  align-content: end;
-  text-align: end;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
 }
 
-.logo h1 {
-  text-align: right;
-  font-family: "Monoton", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  padding: 0;
-  z-index: -1;
-  font-size: 25px;
-}
-
-.logo p {
-  font-family: "Rubik", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 15px;
-  border: 2px solid var(--darker-navy);
-  font-weight: normal;
-  margin-top: -5px;
-  z-index: 999;
-  line-height: 20px;
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-content: end;
-  align-self: flex-end;
+.logo img {
+  width: 200px;
+  height: auto;
 }
 
 .toggle-btn {
@@ -109,7 +81,7 @@ header {
   padding: 4rem 0.75rem;
 }
 
-.main-content h2,
+.main-content h1,
 .our-work-section-header h2,
 .what-we-do-section-header h2,
 .who-we-are-section h2 {
@@ -140,7 +112,7 @@ header {
   font-optical-sizing: auto;
   font-style: normal;
   text-transform: uppercase;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .btn-one {
@@ -191,7 +163,7 @@ header {
 
 /* our work section grid */
 
-.grid-container {
+.our-work-section .grid-container {
   display: grid;
   grid-template-columns: 1fr;
   /*   grid-template-columns: repeat(4, 1fr);
@@ -202,20 +174,20 @@ header {
   margin: 0 auto;
 }
 
-.card {
-  height: 300px;
+.our-work-section .card {
+  height: 400px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.card img {
+.our-work-section .card img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
-.card p {
+.our-work-section .card p {
   height: 15%;
   margin: 0;
   display: flex;
@@ -226,18 +198,18 @@ header {
   text-transform: uppercase;
 }
 
-.card-one p,
-.card-three p,
-.card-five p,
-.card-seven p {
+.our-work-section .card-one p,
+.our-work-section .card-three p,
+.our-work-section .card-five p,
+.our-work-section .card-seven p {
   background-color: var(--md-blue);
   color: var(--lt-seafoam-green);
 }
 
-.card-two p,
-.card-four p,
-.card-six p,
-.card-eigth p {
+.our-work-section .card-two p,
+.our-work-section .card-four p,
+.our-work-section .card-six p,
+.our-work-section .card-eigth p {
   background-color: var(--seafoam-green);
   color: var(--darker-navy);
 }
@@ -399,12 +371,172 @@ footer {
 }
 
 @media only screen and (min-width: 600px) {
+  .header-content {
+    padding-left: 2rem;
+  }
+
+  .main-content-section {
+    padding: 6rem 0.5rem 6rem 2rem;
+  }
+
+  .our-work-section .grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Adjust to display 2 cards */
+    gap: 0; /* Optionally add some gap between cards */
+    width: 100%;
+    max-width: 600px; /* Adjust to fit 2 larger cards */
+    margin: 0 auto;
+  }
+
+  .main-content {
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: start;
+    gap: 2rem;
+  }
+
+  .btn-container button {
+    width: auto;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .our-work-section-header {
+    width: 80%;
+    padding-left: 2rem;
+    padding-top: 7rem;
+  }
+  .what-we-do-section-header button,
+  .our-work-section-footer button {
+    width: auto;
+  }
+
+  .our-work-section-footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .what-we-do-section-header {
+    padding-left: 2rem;
+  }
+  .what-we-do-section {
+    padding-bottom: 4rem;
+  }
+  .what-we-do-section-content .grid-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 0 2rem;
+    max-width: 600px;
+  }
+
+  .what-we-do-section-content .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card-image-container {
+    height: auto;
+    width: 40%;
+    flex-shrink: 0;
+  }
+
+  .card-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  .card-text-container {
+    flex-grow: 1;
+    padding: 0;
+  }
+
+  .who-we-are-section-header {
+    padding-top: 6rem;
+  }
+
+  .who-we-are-section-header button {
+    width: 60%;
+  }
+
+  .who-we-are-section-header-img img {
+    width: 100%;
+  }
+
+  .offices {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .subscribe-form {
+    width: 85%;
+    display: flex;
+  }
+
+  .subscribe-form button {
+    width: 50%;
+  }
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .social-media svg {
+    width: 30px;
+  }
+  .disclaimer {
+    font-size: 14px;
+  }
 }
 
 @media screen and (min-width: 820px) {
+  .main-content-section {
+    padding-right: 2rem;
+  }
+
+  .main-content h1 {
+    font-size: 70px;
+    line-height: 70px;
+  }
+
+  .main-content p {
+    font-size: 20px;
+  }
 }
 
 @media screen and (min-width: 1350px) {
+  .main-content-section {
+    padding-left: 3rem;
+  }
+
+  .main-content {
+    width: 70%;
+  }
+
+  .main-content p {
+    width: 70%;
+    font-size: 18px;
+  }
+
+  .btn-container {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .btn-one,
+  .btn-two {
+    font-size: 20px;
+  }
+
   .header-content {
     padding: 1rem 3rem;
   }
