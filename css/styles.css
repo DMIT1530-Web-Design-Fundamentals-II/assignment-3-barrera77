@@ -28,13 +28,6 @@ header {
   font-style: normal;
 }
 
-.header-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .header-logo {
   width: 100%;
   display: flex;
@@ -76,7 +69,13 @@ header {
 
 /* main content */
 .main-content-section {
-  background-color: var(--md-blue);
+  background: rgb(25, 22, 84);
+  background: linear-gradient(
+    90deg,
+    rgba(25, 22, 84, 1) 0%,
+    rgba(9, 9, 121, 1) 5%,
+    rgba(67, 198, 172, 1) 100%
+  );
   color: var(--lt-seafoam-green);
   padding: 4rem 0.75rem;
 }
@@ -122,7 +121,7 @@ header {
 }
 
 .btn-two {
-  background-color: var(--md-blue);
+  background-color: transparent;
   color: var(--seafoam-green);
   border: 2px solid var(--seafoam-green);
 }
@@ -166,8 +165,7 @@ header {
 .our-work-section .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  /*   grid-template-columns: repeat(4, 1fr);
-   */
+
   gap: 0;
   width: 100%;
   max-width: 320px;
@@ -296,6 +294,10 @@ header {
   color: var(--md-blue);
 }
 
+.who-we-are-section {
+  background-color: var(--seafoam-green);
+}
+
 .btn-our-services {
   padding-top: 2rem;
   padding-bottom: 4rem;
@@ -370,7 +372,7 @@ footer {
   fill: var(--darker-navy);
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 760px) {
   .header-content {
     padding-left: 2rem;
   }
@@ -380,14 +382,11 @@ footer {
   }
 
   .our-work-section .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Adjust to display 2 cards */
-    gap: 0; /* Optionally add some gap between cards */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
     width: 100%;
-    max-width: 600px; /* Adjust to fit 2 larger cards */
+    max-width: 760px;
     margin: 0 auto;
-  }
-
-  .main-content {
   }
 
   .btn-container {
@@ -408,7 +407,7 @@ footer {
   }
   .what-we-do-section-header button,
   .our-work-section-footer button {
-    width: auto;
+    width: 50%;
   }
 
   .our-work-section-footer {
@@ -427,7 +426,7 @@ footer {
     grid-template-columns: 1fr;
     gap: 3rem;
     padding: 0 2rem;
-    max-width: 600px;
+    max-width: 760px;
   }
 
   .what-we-do-section-content .card {
@@ -497,7 +496,58 @@ footer {
   }
 }
 
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 1191px) {
+  nav-c .input-box {
+    position: relative;
+  }
+
+  .icon {
+    position: absolute;
+    right: 16.5%;
+    top: 49px;
+    background-color: transparent;
+    border: none;
+    display: none;
+  }
+
+  .nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    width: 50%;
+  }
+  .header-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+  }
+
+  .header-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .menu {
+    display: flex;
+  }
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding-left: 0;
+    gap: 3rem;
+  }
+  .input-box {
+    display: block;
+  }
+
+  .toggle-btn {
+    display: none;
+  }
+
   .main-content-section {
     padding-right: 2rem;
   }
@@ -509,6 +559,75 @@ footer {
 
   .main-content p {
     font-size: 20px;
+  }
+
+  .our-work-section .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    width: 100%;
+    max-width: 1191px;
+    margin: 0 auto;
+  }
+
+  .our-work-section .card {
+    height: 350px;
+  }
+
+  .what-we-do-section-content .grid-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 0 2rem;
+    max-width: 1191px;
+  }
+
+  .grid-container .card-text-container p {
+    font-size: 20px;
+  }
+
+  .who-we-are-section-header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .who-we-are-section-header h2 {
+    font-size: 60px;
+    padding-bottom: 1rem;
+  }
+
+  .who-we-are-section-header p,
+  .who-we-are-section-header button {
+    font-size: 20px;
+  }
+
+  .about-us button {
+    width: auto;
+  }
+
+  .who-we-are-section-header {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 4rem;
+  }
+  .who-we-are-section-header-content {
+    width: 40%;
+  }
+  .who-we-are-section-header-content h2 {
+    font-size: 40px;
+  }
+  .who-we-are-section-header-content p {
+    font-size: 15px;
+    padding-bottom: 2rem;
+  }
+
+  .who-we-are-section-header-content .about-us button {
+    font-size: 13px;
+    width: 70%;
+  }
+
+  .who-we-are-section-header-img {
+    width: 50%;
+    height: auto;
   }
 }
 
@@ -540,18 +659,6 @@ footer {
   .header-content {
     padding: 1rem 3rem;
   }
-  .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    list-style: none;
-    padding-left: 0;
-    gap: 3rem;
-  }
-
-  .toggle-btn {
-    display: none;
-  }
 
   .header-logo {
     width: 15%;
@@ -563,10 +670,6 @@ footer {
     text-align: end;
     display: flex;
     flex-direction: column;
-  }
-
-  .input-box {
-    display: block;
   }
 
   .logo h1 {
