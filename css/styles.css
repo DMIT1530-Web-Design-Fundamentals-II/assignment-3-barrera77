@@ -220,18 +220,56 @@ header {
 
 /* our work section grid */
 
-.our-work-section .grid-container {
+/* .our-work-section .grid-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 4fr;
 
   gap: 0;
   width: 100%;
   max-width: 320px;
   margin: 0 auto;
+} */
+/* Scrolling */
+
+.scroll-wrapper {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.scroll-wrapper {
+  width: 100vw;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .our-work-section .card {
-  height: 400px;
+  height: auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -243,10 +281,11 @@ header {
   object-fit: cover;
 }
 
-.our-work-section .card p {
+.scroll-wrapper .card p {
   height: 15%;
   margin: 0;
   display: flex;
+  padding: 0.75rem;
   align-items: center;
   justify-content: center;
   font-size: 14px;
@@ -255,17 +294,17 @@ header {
 }
 
 .our-work-section .card-one p,
-.our-work-section .card-three p,
+.our-work-section .card-four p,
 .our-work-section .card-five p,
-.our-work-section .card-seven p {
+.our-work-section .card-eight p {
   background-color: var(--md-blue);
   color: var(--lt-seafoam-green);
 }
 
 .our-work-section .card-two p,
-.our-work-section .card-four p,
+.our-work-section .card-three p,
 .our-work-section .card-six p,
-.our-work-section .card-eigth p {
+.our-work-section .card-seven p {
   background-color: var(--seafoam-green);
   color: var(--darker-navy);
 }
@@ -439,13 +478,13 @@ footer {
     padding: 6rem 0.5rem 6rem 2rem;
   }
 
-  .our-work-section .grid-container {
+  /*  .our-work-section .grid-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 0;
     width: 100%;
     max-width: 760px;
     margin: 0 auto;
-  }
+  } */
 
   .btn-container {
     display: flex;
