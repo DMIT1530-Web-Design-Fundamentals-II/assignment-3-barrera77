@@ -26,15 +26,19 @@ header {
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  background-color: var(--lt-seafoam-green);
 }
-
 .header-logo {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  position: relative;
 }
 
+.header-content {
+  width: 100%;
+  padding: 1rem 0;
+}
 .logo {
   width: 100%;
 }
@@ -42,6 +46,7 @@ header {
 .logo img {
   width: 200px;
   height: auto;
+  .nav-bar-menu;
 }
 
 .toggle-btn {
@@ -53,18 +58,71 @@ header {
   color: var(--darker-navy);
 }
 
-.menu {
+.nav-bar-menu {
   display: none;
+}
+
+.menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.nav-bar-menu .menu li {
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--seafoam-green);
+  font-size: 20px;
+}
+
+.nav-bar-menu.active {
+  position: absolute;
+
+  padding: 0 1rem;
+  top: 12%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  max-height: 100vh;
+  overflow: hidden;
+  transition: max-height 0.7s ease-in-out;
+  background-color: var(--lt-seafoam-green);
+  width: 100%;
 }
 
 .input-box {
   display: none;
 }
 
+.input-box-mobile {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-box-mobile input,
 .input-box input {
   border-radius: 7.5px;
   box-shadow: none;
   border: 1px solid black;
+}
+
+.input-box-mobile input {
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.icon-mobile {
+  position: absolute;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
 }
 
 /* main content */
@@ -497,8 +555,31 @@ footer {
 }
 
 @media screen and (min-width: 1191px) {
-  nav-c .input-box {
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .input-box-mobile,
+  .toggle-button {
+    display: none;
+  }
+
+  .search-box {
     position: relative;
+    width: 100%;
+  }
+
+  .search-box input[type="text"] {
+    padding-left: 30px; /* Adjust padding to accommodate the icon */
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
   }
 
   .icon {
@@ -510,36 +591,36 @@ footer {
     display: none;
   }
 
-  .nav-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    width: 50%;
-  }
-  .header-content {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2rem;
-  }
-
   .header-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
-  .menu {
+
+  .nav-bar-menu {
     display: flex;
+    width: auto;
+    flex-direction: row;
   }
+
   .menu {
     display: flex;
+    flex-direction: row;
+    font-size: 1rem;
     flex-wrap: wrap;
     justify-content: space-between;
-    list-style: none;
-    padding-left: 0;
     gap: 3rem;
+    width: auto;
+    font-size: 1rem;
   }
+
+  .nav-bar-menu .menu li {
+    padding: auto;
+    border: none;
+    width: auto;
+  }
+
   .input-box {
     display: block;
   }
@@ -573,6 +654,10 @@ footer {
     height: 350px;
   }
 
+  .what-we-do-section-header {
+    padding-top: 6rem;
+  }
+
   .what-we-do-section-content .grid-container {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -582,6 +667,11 @@ footer {
 
   .grid-container .card-text-container p {
     font-size: 20px;
+  }
+
+  .who-we-are-section-header {
+    padding-bottom: 7rem;
+    padding-top: 7rem;
   }
 
   .who-we-are-section-header {
@@ -601,6 +691,10 @@ footer {
 
   .about-us button {
     width: auto;
+  }
+
+  .who-we-are-section-content {
+    padding-top: 6rem;
   }
 
   .who-we-are-section-header {
@@ -628,6 +722,31 @@ footer {
   .who-we-are-section-header-img {
     width: 50%;
     height: auto;
+  }
+
+  .offices {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .who-we-are-section-content {
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .subscribe-form {
+    width: 100%;
+  }
+
+  .newsletter {
+    width: 40%;
+  }
+
+  footer {
+    padding-bottom: 0;
+    padding-top: 0;
   }
 }
 
@@ -681,5 +800,21 @@ footer {
     margin-top: -5px;
     line-height: 30px;
     width: 80%;
+  }
+
+  .our-work-section .grid-container {
+    max-width: 1350px;
+  }
+
+  .our-work-section .card {
+    height: 400px;
+  }
+
+  .our-work-section-header {
+    padding-left: 3rem;
+  }
+
+  .what-we-do-section-content .grid-container {
+    max-width: 1350px;
   }
 }
